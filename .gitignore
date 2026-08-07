@@ -1,0 +1,27 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js files (only if a local preview tool is added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables and deployment secrets
+.env
+.env.*
+!.env.example
+
+# Local build output
+.dist/
+dist/
+.cache/
