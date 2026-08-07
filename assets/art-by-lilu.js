@@ -1,5 +1,13 @@
 (() => {
   const facebook = 'https://www.facebook.com/profile.php?id=61588397104480';
+  const phone = '+385992443678';
+  const whatsapp = `https://wa.me/385992443678?text=${encodeURIComponent('Pozdrav! Javljam se za cvjetnu dekoraciju / buket. Zanima me više informacija.')}`;
+  const email = 'liluartosijek@gmail.com';
+  const instagram = 'https://www.instagram.com/artby.lilu/';
+  const icons = {
+    whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.2.3 11.7c0 2.1.5 4.1 1.6 5.9L0 24l6.6-1.7a11.7 11.7 0 0 0 5.5 1.4h.1c6.5 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.1-3.4-8.5Zm-8.4 18.2a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 7 2.9a9.7 9.7 0 0 1 2.9 7c0 5.4-4.4 9.8-9.7 9.8Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.2c-.2.2-.3.3-.6.1-.3-.2-1.2-.5-2.3-1.5a8.7 8.7 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.3c-.2-.5-.5-.4-.7-.4H8c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.3 3.5c.2.2 2.3 3.6 5.7 5 .8.4 1.5.6 2 .8.8.2 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4 0-.1-.3-.2-.6-.4Z" fill="currentColor"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 0h9.2C20.7 0 24 3.3 24 7.4v9.2c0 4.1-3.3 7.4-7.4 7.4H7.4A7.4 7.4 0 0 1 0 16.6V7.4C0 3.3 3.3 0 7.4 0Zm-.3 2.4a4.7 4.7 0 0 0-4.7 4.7v9.8a4.7 4.7 0 0 0 4.7 4.7h9.8a4.7 4.7 0 0 0 4.7-4.7V7.1a4.7 4.7 0 0 0-4.7-4.7H7.1Zm9.9 1.8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 5.8A6.2 6.2 0 1 1 12 18.2 6.2 6.2 0 0 1 12 5.8Zm0 2.4a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" fill="currentColor"/></svg>'
+  };
   const pages = {
     home: 'cvjecarna-elegant.html',
     offers: 'cvjecarna-elegant-ponuda.html',
@@ -38,19 +46,26 @@
   const brand = $('.brand');
   brand.innerHTML = `<img class="brand-logo" src="${photos.logo}" alt="Art by Lilu">`;
   brand.setAttribute('aria-label', 'Art by Lilu — početna');
-  set('.footer-brand', 'ART BY<br>LILU<span>Cvjetne dekoracije · Osijek</span>');
-  set('.footer-nav:last-of-type', `<strong>Kontakt</strong><a href="${facebook}" target="_blank" rel="noopener">Facebook: @artby.lilu</a><a href="${facebook}" target="_blank" rel="noopener">Pošaljite poruku</a><span>Osijek i okolica</span>`);
-  set('.footer-bottom', '<span>© 2026 Art by Lilu.</span><a href="' + facebook + '" target="_blank" rel="noopener">Facebook</a>');
+  set('.footer-brand', `<img class="footer-logo" src="${photos.logo}" alt="Art by Lilu"><span>Cvjetni studio — Osijek</span>`);
+  const footerNavs = $$('.footer-nav');
+  if (footerNavs[0]) footerNavs[0].innerHTML = `<strong>Izbornik</strong><a href="${pages.home}">Početna</a><a href="${pages.offers}">Buketi</a><a href="${pages.weddings}">Vjenčanja</a><a href="${pages.gallery}">Galerija</a><a href="${pages.contact}">Kontakt</a>`;
+  if (footerNavs[1]) footerNavs[1].innerHTML = `<strong>Kontakt</strong><a href="tel:${phone}">${phone.replace('+385', '+385 ')}</a><a href="mailto:${email}">${email}</a><span>Ulica Josipa Hutlera 39, Osijek</span><div class="footer-socials"><a class="social-icon" href="${whatsapp}" target="_blank" rel="noopener" aria-label="Pošaljite WhatsApp poruku">${icons.whatsapp}</a><a class="social-icon" href="${instagram}" target="_blank" rel="noopener" aria-label="Instagram Art by Lilu">${icons.instagram}</a></div>`;
+  set('.footer-bottom', '<span>© 2026 Art by Lilu.</span><a class="made-by" href="https://localcraftmedia.com/" target="_blank" rel="noopener">Made by LocalCraftMedia</a><a href="' + instagram + '" target="_blank" rel="noopener">@artby.lilu</a>');
 
   $$('.nav-left .nav-link').forEach((link, index) => link.textContent = ['Početna', 'Buketi', 'Vjenčanja'][index]);
   $$('.nav-right .nav-link').forEach((link, index) => link.textContent = ['Galerija', 'Kontakt'][index]);
   $$('.mobile-drawer a').forEach((link, index) => link.textContent = ['Početna', 'Buketi', 'Vjenčanja', 'Galerija', 'Kontakt'][index]);
   $$('.site-header .button').forEach((link) => {
     link.textContent = 'Pošalji upit';
-    link.href = facebook;
+    link.href = whatsapp;
     link.target = '_blank';
     link.rel = 'noopener';
   });
+
+  const header = $('.site-header');
+  const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
   const file = location.pathname.split('/').pop() || pages.home;
   if (file === pages.home) {
@@ -125,7 +140,7 @@
     set('.image-story-copy h2', 'Recite nam što zamišljate.');
     set('.image-story-copy p:not(.kicker)', 'Pošaljite nam poruku s prigodom, željenom paletom, okvirnim budžetom i datumom dostave. Javljamo vam se s prijedlogom.');
     const button = $('.image-story-copy .button');
-    button.textContent = 'Pošalji poruku'; button.href = facebook; button.target = '_blank'; button.rel = 'noopener';
+    button.textContent = 'Pošalji poruku'; button.href = whatsapp; button.target = '_blank'; button.rel = 'noopener';
     setImages([{ src: photos.redBouquet, alt: 'Buket Art by Lilu' }, { src: photos.box, alt: 'Cvjetni box Art by Lilu' }]);
   }
 
@@ -195,22 +210,40 @@
     const hero = $('.page-hero');
     set('.kicker', 'Kontakt · Narudžbe · Dekoracije', hero);
     set('h1', 'Javite se za<br><em>svoj poseban trenutak.</em>', hero);
-    set('.lead', 'Za buket, dostavu ili dekoraciju vjenčanja pošaljite nam poruku na Facebooku.', hero);
+    set('.lead', 'Za buket, dostavu ili dekoraciju vjenčanja pošaljite nam WhatsApp poruku.', hero);
     const details = $('.contact-details');
     set('.kicker', 'Art by Lilu · Osijek', details);
     set('h2', 'Krenimo od vaše ideje.', details);
     set('.lead', 'Napišite nam prigodu, datum i kakvo cvijeće volite. Javljamo vam se s prijedlogom i dogovorom.', details);
-    set('.contact-list', `<li><span>Facebook</span><a href="${facebook}" target="_blank" rel="noopener">@artby.lilu</a></li><li><span>Područje</span><strong>Osijek i okolica</strong></li><li><span>Usluge</span><strong>Buketi · dekoracije · dostava</strong></li>`, details);
+    set('.contact-list', `<li><span>Telefon</span><a href="tel:${phone}">${phone.replace('+385', '+385 ')}</a></li><li><span>E-mail</span><a href="mailto:${email}">${email}</a></li><li><span>Adresa</span><strong>Ulica Josipa Hutlera 39, Osijek</strong></li><li><span>Instagram</span><a href="${instagram}" target="_blank" rel="noopener">@artby.lilu</a></li>`, details);
     const form = $('.contact-form');
-    form.action = facebook; form.method = 'get'; form.target = '_blank';
+    form.action = whatsapp; form.method = 'get'; form.target = '_blank';
     set('.field:nth-child(4) select', '<option>Buket za prigodu</option><option>Vjenčani buket i reveri</option><option>Dekoracija svečane sale</option><option>Dekoracija auta</option><option>Vijenac ili aranžman</option><option>Usluga dostave</option>', form);
-    set('.form-note', 'Klikom na “Pošalji upit” otvorit će se Facebook stranica Art by Lilu, gdje možete poslati poruku.', form);
-    set('.button', 'Pošalji upit na Facebook', form);
+    set('.form-note', 'Klikom na “Pošalji upit” svi podaci iz obrasca automatski će se prenijeti u WhatsApp poruku.', form);
+    set('.button', 'Pošalji upit na WhatsApp', form);
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const date = data.get('datum');
+      const formattedDate = date ? new Intl.DateTimeFormat('hr-HR').format(new Date(`${date}T12:00:00`)) : 'Nije naveden';
+      const message = [
+        'Pozdrav! Šaljem upit preko web-stranice Art by Lilu.',
+        '',
+        `Ime i prezime: ${data.get('ime') || 'Nije navedeno'}`,
+        `E-mail: ${data.get('email') || 'Nije naveden'}`,
+        `Telefon: ${data.get('telefon') || 'Nije naveden'}`,
+        `Zanima me: ${data.get('usluga') || 'Nije odabrano'}`,
+        `Željeni datum: ${formattedDate}`,
+        `Okvirni budžet: ${data.get('budzet') || 'Nije naveden'}`,
+        `Poruka: ${data.get('poruka') || 'Nema dodatne poruke'}`
+      ].join('\n');
+      window.open(`https://wa.me/385992443678?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    });
     const editorial = $('.editorial-split');
     set('.kicker', 'Dogovorite svoj termin', editorial);
     set('h2', 'Cvijeće za svaki trenutak koji je vama važan.', editorial);
     set('p:not(.kicker)', 'Za manje bukete, dostavu i veće dekoracije najbolje nam je javiti se unaprijed kako bismo sve pripremili baš po vašoj želji.', $('.editorial-copy'));
-    const link = $('.editorial-copy .text-link'); link.textContent = 'Otvori Facebook'; link.href = facebook; link.target = '_blank'; link.rel = 'noopener';
+    const link = $('.editorial-copy .text-link'); link.textContent = 'Pošalji WhatsApp poruku'; link.href = whatsapp; link.target = '_blank'; link.rel = 'noopener';
     setImages([{ src: photos.whiteEvent, alt: 'Dekoracija Art by Lilu' }]);
   }
 })();
