@@ -419,7 +419,7 @@ h3 {
   .nav-left, .nav-right { display: none; }
   .brand { grid-column: 1; min-width: 0; justify-self: start; text-align: left; }
   .brand-logo { margin-right: 0; margin-left: 0; }
-  .site-header:not(.is-scrolled) .brand-logo { transform-origin: left center; }
+  .site-header:not(.is-scrolled) .brand-logo { transform: translateX(-46px) scale(2.11); transform-origin: left center; }
   .site-header:not(.is-scrolled) .mobile-trigger { color: var(--white); }
   .mobile-trigger {
     grid-column: 2;
@@ -469,17 +469,18 @@ h3 {
 
 @media (max-width: 680px) {
   .wrap, .narrow { width: min(100% - 36px, 520px); }
-  .topline { min-height: 30px; font-size: 0.58rem; }
+  .topline { display: none; }
+  .site-header { top: 0; }
   .header-row { min-height: 76px; display: flex; justify-content: space-between; gap: 0; }
   .brand { order: 1; min-width: 0; width: 94px; max-width: none; margin-right: auto; text-align: left; }
   .mobile-trigger { order: 2; margin-left: auto; }
   .brand strong { font-size: 1.32rem; white-space: nowrap; }
   .brand span { margin-top: 6px; font-size: 0.48rem; }
-  .mobile-drawer { top: 106px; }
+  .mobile-drawer { top: 76px; }
   .site-header.is-scrolled ~ .mobile-drawer { top: 76px; }
   h1 { font-size: 3.75rem; overflow-wrap: anywhere; }
   h2 { font-size: 3.25rem; overflow-wrap: anywhere; }
-  .hero { min-height: calc(100svh - 106px); }
+  .hero { min-height: calc(100svh - 76px); }
   .hero::after { background: linear-gradient(0deg, rgba(14,15,13,0.8) 0%, rgba(14,15,13,0.18) 68%); }
   .hero img { object-position: 68% center; }
   .hero-content { padding-top: 180px; padding-bottom: 42px; }
