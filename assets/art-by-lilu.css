@@ -247,7 +247,7 @@ h3 {
 }
 .marquee-group { display: flex; flex: 0 0 auto; gap: 46px; padding: 17px 46px 17px 0; white-space: nowrap; }
 .marquee-track span::after { content: "\00b7"; margin-left: 46px; color: var(--coral); }
-@keyframes marquee-scroll { to { transform: translateX(-50%); } }
+@keyframes marquee-scroll { to { transform: translateX(-33.333333%); } }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 
 .intro { padding: 118px 0; }
