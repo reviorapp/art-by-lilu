@@ -1,14 +1,3 @@
-# Flora Nocturna
-
-Statična HTML stranica spremna za GitHub i Hostinger.
-
-## Lokalno uređivanje
-
-- HTML stranice su u korijenu projekta.
-- Stilovi i slike nalaze se u mapi `assets/`.
-- Osnovni podaci o brendu i kontaktu nalaze se u `site.json`.
-
-Za lokalni pregled dovoljno je otvoriti `cvjecarna-elegant.html` u pregledniku. Ako koristite VS Code, proširenje Live Server omogućuje automatsko osvježavanje pri izmjenama.
 
 ## GitHub
 
