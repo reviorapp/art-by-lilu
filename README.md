@@ -13,4 +13,4 @@ git push -u origin main
 
 ## Hostinger
 
-U Hostinger File Manageru otvorite `public_html` domene i učitajte HTML datoteke te cijelu mapu `assets`. Početna datoteka je `index.html`, a ona automatski otvara `art-by-lilu.html`.
+U Hostinger File Manageru  otvorite `public_html` domene i učitajte HTML datoteke te cijelu mapu `assets`. Početna datoteka je `index.html`, a ona automatski otvara `art-by-lilu.html`.
