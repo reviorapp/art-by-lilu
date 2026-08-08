@@ -198,7 +198,7 @@
       { src: photos.bridal, alt: 'Vjenčani buket' },
       { src: photos.whiteBouquet, alt: 'Bijeli buket' }
     ]);
-    $$('.gallery-label').forEach((label, index) => set('span:first-child', ['Buketi za prigode', 'Cvjetni boxovi', 'Dekoracije sala', 'Nježni detalji', 'Vjenčanja'][index] || 'Art by Lilu', label));
+    $$('.gallery-label').forEach((label, index) => set('span:first-child', ['Buketi za prigode', 'Cvjetni boxovi', 'Vjenčanja', 'Nježni detalji', 'Dekoracija auta'][index] || 'Art by Lilu', label));
     $$('.journal-card').forEach((card, index) => {
       set('.meta', ['Buketi', 'Vjenčanja', 'Detalji'][index], card);
       set('h3', ['Cvijeće koje nosi poruku', 'Dekoracije za vaš najljepši dan', 'Kombinacije boja koje volimo'][index], card);

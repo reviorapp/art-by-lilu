@@ -415,10 +415,15 @@ h3 {
 .social-icon:hover { color: var(--ink); background: var(--white); }
 
 @media (max-width: 980px) {
-  .header-row { grid-template-columns: auto 1fr auto; }
-  .nav-left, .nav-right .nav-link, .nav-right .button { display: none; }
-  .brand { grid-column: 2; min-width: 0; }
+  .header-row { grid-template-columns: 1fr auto; }
+  .nav-left, .nav-right { display: none; }
+  .brand { grid-column: 1; min-width: 0; justify-self: start; text-align: left; }
+  .brand-logo { margin-right: 0; margin-left: 0; }
+  .site-header:not(.is-scrolled) .brand-logo { transform-origin: left center; }
+  .site-header:not(.is-scrolled) .mobile-trigger { color: var(--white); }
   .mobile-trigger {
+    grid-column: 2;
+    grid-row: 1;
     display: grid;
     width: 42px;
     height: 42px;
@@ -426,10 +431,11 @@ h3 {
     border: 0;
     background: transparent;
     color: var(--ink);
-    font-size: 1.35rem;
+    font-size: 0;
     cursor: pointer;
   }
-  .nav-right { grid-column: 3; }
+  .mobile-trigger::before { content: "\2630"; font-size: 1.35rem; line-height: 1; }
+  .mobile-trigger[aria-expanded="true"]::before { content: "\00d7"; }
   .mobile-drawer {
     position: fixed;
     z-index: 49;
@@ -464,8 +470,9 @@ h3 {
 @media (max-width: 680px) {
   .wrap, .narrow { width: min(100% - 36px, 520px); }
   .topline { min-height: 30px; font-size: 0.58rem; }
-  .header-row { min-height: 76px; }
-  .brand { min-width: 0; max-width: 220px; justify-self: center; }
+  .header-row { min-height: 76px; display: flex; justify-content: space-between; gap: 0; }
+  .brand { order: 1; min-width: 0; width: 94px; max-width: none; margin-right: auto; text-align: left; }
+  .mobile-trigger { order: 2; margin-left: auto; }
   .brand strong { font-size: 1.32rem; white-space: nowrap; }
   .brand span { margin-top: 6px; font-size: 0.48rem; }
   .mobile-drawer { top: 106px; }
@@ -511,9 +518,12 @@ h3 {
   .field.full, .form-note { grid-column: auto; }
   .contact-form .button { width: 100%; }
   .footer-top { grid-template-columns: 1fr; gap: 42px; padding-bottom: 54px; }
-  .footer-logo { width: 240px; height: 145px; }
-  .footer-brand { width: 240px; }
-  .footer-bottom { display: block; }
+  .footer-top { text-align: center; }
+  .footer-brand { width: 240px; justify-self: center; }
+  .footer-logo { width: 240px; height: 145px; margin: 0 auto; }
+  .footer-nav { justify-items: center; }
+  .footer-socials { justify-content: center; }
+  .footer-bottom { display: block; text-align: center; }
   .footer-bottom > :last-child { display: block; margin-top: 8px; }
   .made-by { display: block; margin-top: 8px; text-align: center; }
 }
