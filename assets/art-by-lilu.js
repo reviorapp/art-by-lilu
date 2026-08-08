@@ -9,11 +9,18 @@
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 0h9.2C20.7 0 24 3.3 24 7.4v9.2c0 4.1-3.3 7.4-7.4 7.4H7.4A7.4 7.4 0 0 1 0 16.6V7.4C0 3.3 3.3 0 7.4 0Zm-.3 2.4a4.7 4.7 0 0 0-4.7 4.7v9.8a4.7 4.7 0 0 0 4.7 4.7h9.8a4.7 4.7 0 0 0 4.7-4.7V7.1a4.7 4.7 0 0 0-4.7-4.7H7.1Zm9.9 1.8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 5.8A6.2 6.2 0 1 1 12 18.2 6.2 6.2 0 0 1 12 5.8Zm0 2.4a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" fill="currentColor"/></svg>'
   };
   const pages = {
-    home: 'cvjecarna-elegant.html',
-    offers: 'cvjecarna-elegant-ponuda.html',
-    weddings: 'cvjecarna-elegant-eventi.html',
-    gallery: 'cvjecarna-elegant-galerija.html',
-    contact: 'cvjecarna-elegant-kontakt.html'
+    home: 'art-by-lilu.html',
+    offers: 'art-by-lilu-buketi.html',
+    weddings: 'art-by-lilu-vjecanja.html',
+    gallery: 'art-by-lilu-galerija.html',
+    contact: 'art-by-lilu-kontakt.html'
+  };
+  const legacyPageLinks = {
+    'cvjecarna-elegant.html': pages.home,
+    'cvjecarna-elegant-ponuda.html': pages.offers,
+    'cvjecarna-elegant-eventi.html': pages.weddings,
+    'cvjecarna-elegant-galerija.html': pages.gallery,
+    'cvjecarna-elegant-kontakt.html': pages.contact
   };
   const photos = {
     hero: 'assets/640928472_17857543770615287_1567878988128943540_n.jpg',
@@ -42,6 +49,10 @@
   };
 
   document.documentElement.lang = 'hr';
+  $$('a[href]').forEach((link) => {
+    const destination = legacyPageLinks[link.getAttribute('href')];
+    if (destination) link.href = destination;
+  });
   $('.topline').textContent = 'Cvjetne dekoracije za vaše posebne trenutke';
   const brand = $('.brand');
   brand.innerHTML = `<img class="brand-logo" src="${photos.logo}" alt="Art by Lilu">`;

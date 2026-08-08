@@ -34,7 +34,7 @@
   },
   "deployment": {
     "type": "static-html",
-    "entryPage": "cvjecarna-elegant.html",
+    "entryPage": "art-by-lilu.html",
     "notes": "Za Hostinger učitajte sadržaj ove mape u public_html. Ne učitavajte mapu .git."
   }
 }

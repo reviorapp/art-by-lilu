@@ -524,7 +524,7 @@ h3 {
   .footer-nav { justify-items: center; }
   .footer-socials { justify-content: center; }
   .footer-bottom { display: block; text-align: center; }
-  .footer-bottom > :last-child { display: block; margin-top: 8px; }
+  .footer-bottom > :last-child { display: none; }
   .made-by { display: block; margin-top: 8px; text-align: center; }
 }
 

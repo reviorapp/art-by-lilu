@@ -13,4 +13,4 @@ git push -u origin main
 
 ## Hostinger
 
-U Hostinger File Manageru otvorite `public_html` domene i učitajte HTML datoteke te cijelu mapu `assets`. Početna datoteka trenutačno je `cvjecarna-elegant.html`; za standardnu početnu stranicu na domeni preimenujte je u `index.html` prije učitavanja.
+U Hostinger File Manageru otvorite `public_html` domene i učitajte HTML datoteke te cijelu mapu `assets`. Početna datoteka je `index.html`, a ona automatski otvara `art-by-lilu.html`.
