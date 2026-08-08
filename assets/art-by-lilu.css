@@ -238,14 +238,17 @@ h3 {
 .marquee-track {
   width: max-content;
   display: flex;
-  gap: 46px;
-  padding: 17px 0;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
   color: #3a3a35;
   font-family: var(--serif);
   font-size: 1.35rem;
   font-style: italic;
 }
+.marquee-group { display: flex; flex: 0 0 auto; gap: 46px; padding: 17px 46px 17px 0; white-space: nowrap; }
 .marquee-track span::after { content: "\00b7"; margin-left: 46px; color: var(--coral); }
+@keyframes marquee-scroll { to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
 
 .intro { padding: 118px 0; }
 .intro-grid {
@@ -531,4 +534,5 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
+  .marquee-track { animation: none; }
 }
