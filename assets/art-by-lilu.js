@@ -53,7 +53,8 @@
     const destination = legacyPageLinks[link.getAttribute('href')];
     if (destination) link.href = destination;
   });
-  $('.topline').textContent = 'Cvjetne dekoracije za vaše posebne trenutke';
+  const topline = $('.topline');
+  if (topline) topline.textContent = 'Cvjetne dekoracije za vaše posebne trenutke';
   const brand = $('.brand');
   brand.innerHTML = `<img class="brand-logo" src="${photos.logo}" alt="Art by Lilu">`;
   brand.setAttribute('aria-label', 'Art by Lilu — početna');
