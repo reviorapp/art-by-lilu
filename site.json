@@ -1,40 +1,5 @@
 {
-  "site": {
-    "name": "Art by Lilu",
-    "tagline": "Cvjetne dekoracije · Osijek",
-    "language": "hr",
-    "description": "Cvjetne dekoracije, vjenčani buketi i aranžmani za svaku prigodu u Osijeku.",
-    "palette": {
-      "sage": "#697463",
-      "blush": "#eadbd2",
-      "ceramic": "#b8947f",
-      "charcoal": "#282a24"
-    },
-    "services": [
-      "Cvjetne dekoracije",
-      "Vjenčani buketi",
-      "Dekoracija svečanih sala",
-      "Izrada revera",
-      "Dekoracija auta",
-      "Buketi za sve prigode",
-      "Cvjetni boxovi",
-      "Aranžmani za groblje i vijenci",
-      "Dostava"
-    ],
-    "contact": {
-      "email": "liluartosijek@gmail.com",
-      "phone": "+385 99 244 3678",
-      "address": "Ulica Josipa Hutlera 39, Osijek"
-    },
-    "social": {
-      "facebook": "https://www.facebook.com/profile.php?id=61588397104480",
-      "instagram": "https://www.instagram.com/artby.lilu/",
-      "pinterest": ""
-    }
-  },
-  "deployment": {
-    "type": "static-html",
-    "entryPage": "art-by-lilu.html",
-    "notes": "Za Hostinger učitajte sadržaj ove mape u public_html. Ne učitavajte mapu .git."
-  }
+  "configuration": "site-config.js",
+  "entryPage": "index.html",
+  "note": "Poslovne podatke uređujte u site-config.js. Upute su u UPUTE.md."
 }
